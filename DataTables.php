@@ -109,7 +109,7 @@ class DataTables
   }
 
   /**
-   * Edit existing column.
+   * Mapping column.
    * @param string $name Existing column name.
    * @param \Closure $callback Callback to manipulate existing column.
    */
