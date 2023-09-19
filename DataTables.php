@@ -177,8 +177,6 @@ class DataTables
       }
 
       self::$qb->groupEnd();
-
-      self::$qb->groupBy('id'); // Required.
     }
 
     // Return number of filtered rows.
