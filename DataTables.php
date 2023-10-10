@@ -231,6 +231,7 @@ class DataTables
         for ($x = 0; $x < count($rows); $x++) {
           if (array_key_exists($mcol['name'], $rows[$x])) {
             if (is_callable($mcol['callback'])) {
+              // We make sure no modified rows after callback is called.
               $rows[$x][$mcol['name']] = $mcol['callback']($orgRows[$x]);
             }
           }
