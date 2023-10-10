@@ -488,16 +488,6 @@ class DataTables
     return new self;
   }
 
-  private function trimArray(array $data)
-  {
-    if (is_array($data) && count($data)) {
-      for ($x = 0; $x < count($data); $x++) {
-        $data[$x] = trim($data[$x]);
-      }
-    }
-    return $data;
-  }
-
   public function where($key, $value = null, bool $escape = null)
   {
     if (!self::$qb) {
