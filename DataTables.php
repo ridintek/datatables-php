@@ -225,11 +225,13 @@ class DataTables
 
     // Map columns
     if ($this->mapColumns) {
+      $orgRows = $rows; // Copy unmodified rows to original rows.
+
       foreach ($this->mapColumns as $mcol) {
         for ($x = 0; $x < count($rows); $x++) {
           if (array_key_exists($mcol['name'], $rows[$x])) {
             if (is_callable($mcol['callback'])) {
-              $rows[$x][$mcol['name']] = $mcol['callback']($rows[$x]);
+              $rows[$x][$mcol['name']] = $mcol['callback']($orgRows[$x]);
             }
           }
         }
